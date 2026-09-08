@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smash Up — Smash Burgers</title>
   <meta name="description" content="Smash Up Smash Burgers — Menu e contatti" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       background: #0d0d0d;
@@ -25,6 +31,7 @@
       padding: 2.8rem 1.5rem 1.8rem;
       border-bottom: 1px solid #222;
     }
+
     .logo {
       font-family: 'Oswald', sans-serif;
       font-size: clamp(48px, 12vw, 72px);
@@ -32,7 +39,11 @@
       line-height: 1;
       color: #f0ead8;
     }
-    .logo-up { color: #e8a020; }
+
+    .logo-up {
+      color: #e8a020;
+    }
+
     .logo-sub {
       font-family: 'Oswald', sans-serif;
       font-size: 13px;
@@ -40,12 +51,14 @@
       color: #e8a020;
       margin-top: 6px;
     }
+
     .tagline {
       font-size: 13px;
       color: #555;
       margin-top: 10px;
       letter-spacing: 1px;
     }
+
     .divider {
       width: 50px;
       height: 1px;
@@ -76,10 +89,12 @@
       color: #f0ead8;
       transition: border-color 0.2s, background 0.2s;
     }
+
     .btn:hover {
       border-color: #e8a020;
       background: #1b1b1b;
     }
+
     .btn-icon {
       width: 38px;
       height: 38px;
@@ -89,21 +104,34 @@
       justify-content: center;
       flex-shrink: 0;
     }
+
     .btn-icon.ig {
-      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      background: linear-gradient(
+        135deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+      );
     }
+
     .btn-label {
       font-family: 'Oswald', sans-serif;
       font-size: 16px;
       letter-spacing: 2px;
       flex: 1;
     }
+
     .btn-arrow {
       color: #333;
       font-size: 18px;
       transition: color 0.2s;
     }
-    .btn:hover .btn-arrow { color: #e8a020; }
+
+    .btn:hover .btn-arrow {
+      color: #e8a020;
+    }
 
     /* MENU */
     .menu-wrap {
@@ -111,6 +139,7 @@
       margin: 0 auto;
       padding: 0 1.2rem;
     }
+
     .section-label {
       text-align: center;
       font-family: 'Oswald', sans-serif;
@@ -119,6 +148,7 @@
       color: #3a3a3a;
       padding: 2rem 0 1rem;
     }
+
     .category {
       font-family: 'Oswald', sans-serif;
       font-size: 11px;
@@ -126,6 +156,7 @@
       color: #e8a020;
       margin: 1.6rem 0 0.5rem;
     }
+
     .item {
       display: flex;
       justify-content: space-between;
@@ -133,12 +164,14 @@
       padding: 11px 0;
       border-bottom: 1px solid #1a1a1a;
     }
+
     .item-name {
       font-family: 'Oswald', sans-serif;
       font-size: 17px;
       letter-spacing: 1px;
       color: #f0ead8;
     }
+
     .item-desc {
       font-size: 11px;
       color: #4a4a4a;
@@ -146,6 +179,7 @@
       letter-spacing: 0.3px;
       max-width: 260px;
     }
+
     .item-price {
       font-family: 'Oswald', sans-serif;
       font-size: 17px;
@@ -154,16 +188,21 @@
       flex-shrink: 0;
       margin-left: 12px;
     }
+
     .extra-row {
       display: flex;
       justify-content: space-between;
       font-size: 12px;
-      color: #4a4a4a;
-      padding: 6px 0;
+      color: #777;
+      padding: 8px 0;
       border-bottom: 1px solid #171717;
       letter-spacing: 0.5px;
     }
-    .extra-price { color: #7a5c10; }
+
+    .extra-price {
+      color: #e8a020;
+      font-family: 'Oswald', sans-serif;
+    }
 
     /* FOOTER */
     footer {
@@ -174,89 +213,243 @@
       letter-spacing: 3px;
       color: #2a2a2a;
     }
-    footer span { color: #e8a020; }
+
+    footer span {
+      color: #e8a020;
+    }
   </style>
 </head>
+
 <body>
 
   <header class="hero">
-    <div class="logo">SMASH <span class="logo-up">UP</span></div>
-    <div class="logo-sub">SMASH BURGERS</div>
-    <p class="tagline">Smashed fresh. Every time.</p>
+    <div class="logo">
+      SMASH <span class="logo-up">UP</span>
+    </div>
+
+    <div class="logo-sub">
+      SMASH BURGERS
+    </div>
+
+    <p class="tagline">
+      One burger. Done right.
+    </p>
+
     <div class="divider"></div>
   </header>
 
+
+  <!-- INSTAGRAM -->
   <div class="links">
-    <!--
-      =============================================
-      INSTAGRAM: cambia l'href con il tuo profilo
-      Es: href="https://www.instagram.com/smashup_burgers"
-      =============================================
-    -->
-    <a class="btn" href="https://www.instagram.com/smashupmartina" target="_blank" rel="noopener">
+
+    <a
+      class="btn"
+      href="https://www.instagram.com/smashupmartina"
+      target="_blank"
+      rel="noopener"
+    >
+
       <div class="btn-icon ig">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+        >
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
           <circle cx="12" cy="12" r="4"/>
-          <circle cx="17.5" cy="6.5" r="1.2" fill="white" stroke="none"/>
+          <circle
+            cx="17.5"
+            cy="6.5"
+            r="1.2"
+            fill="white"
+            stroke="none"
+          />
         </svg>
       </div>
-      <span class="btn-label">SEGUICI SU INSTAGRAM</span>
-      <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+      <span class="btn-label">
+        SEGUICI SU INSTAGRAM
+      </span>
+
+      <svg
+        class="btn-arrow"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+
     </a>
+
   </div>
 
+
+  <!-- MENU -->
   <div class="menu-wrap">
-    <p class="section-label">— IL NOSTRO MENU —</p>
 
-    <div class="category">BURGERS</div>
+    <p class="section-label">
+      — IL NOSTRO MENU —
+    </p>
 
-    <div class="item">
-      <div>
-        <div class="item-name">THE SMASH</div>
-        <div class="item-desc">Single patty · Smashed beef, cheddar, pickles, onions, smash sauce</div>
-      </div>
-      <div class="item-price">€7.90</div>
+
+    <!-- THE SMASH -->
+    <div class="category">
+      THE SMASH
     </div>
 
     <div class="item">
       <div>
-        <div class="item-name">DOUBLE SMASH</div>
-        <div class="item-desc">Double patty · Smashed beef, cheddar, pickles, onions, smash sauce</div>
+        <div class="item-name">
+          S
+        </div>
       </div>
-      <div class="item-price">€10.90</div>
+
+      <div class="item-price">
+        €6.00
+      </div>
     </div>
 
-    <div class="category">SIDES</div>
-
-    <div class="item">
-      <div><div class="item-name">FRIES</div></div>
-      <div class="item-price">€3.00</div>
-    </div>
-    <div class="item">
-      <div><div class="item-name">XL FRIES</div></div>
-      <div class="item-price">€4.50</div>
-    </div>
-
-    <div class="category">DRINKS</div>
 
     <div class="item">
-      <div><div class="item-name">SOFT DRINKS</div></div>
-      <div class="item-price">€2.50</div>
-    </div>
-    <div class="item">
-      <div><div class="item-name">BEER</div></div>
-      <div class="item-price">€3.50</div>
+      <div>
+        <div class="item-name">
+          M
+        </div>
+      </div>
+
+      <div class="item-price">
+        €8.00
+      </div>
     </div>
 
-    <div class="category">EXTRAS</div>
-    <div class="extra-row"><span>Extra Cheddar</span><span class="extra-price">+€1.00</span></div>
-    <div class="extra-row"><span>Extra Smash Sauce</span><span class="extra-price">+€0.50</span></div>
+
+    <div class="item">
+      <div>
+        <div class="item-name">
+          L
+        </div>
+      </div>
+
+      <div class="item-price">
+        €10.00
+      </div>
+    </div>
+
+
+    <div class="extra-row">
+      <span>CRISPY BACON</span>
+      <span class="extra-price">+€1.50</span>
+    </div>
+
+
+    <!-- SIDES -->
+    <div class="category">
+      SIDES
+    </div>
+
+
+    <div class="item">
+      <div>
+        <div class="item-name">
+          REGULAR FRIES
+        </div>
+      </div>
+
+      <div class="item-price">
+        €3.00
+      </div>
+    </div>
+
+
+    <div class="item">
+      <div>
+        <div class="item-name">
+          SWEET POTATO FRIES
+        </div>
+      </div>
+
+      <div class="item-price">
+        €4.00
+      </div>
+    </div>
+
+
+    <div class="item">
+      <div>
+        <div class="item-name">
+          BACON & CHEESE FRIES
+        </div>
+      </div>
+
+      <div class="item-price">
+        €4.50
+      </div>
+    </div>
+
+
+    <!-- CHICKEN -->
+    <div class="category">
+      CHICKEN
+    </div>
+
+
+    <div class="item">
+      <div>
+        <div class="item-name">
+          CHICKEN TENDERS
+        </div>
+      </div>
+
+      <div class="item-price">
+        €4.90
+      </div>
+    </div>
+
+
+    <!-- DRINKS -->
+    <div class="category">
+      DRINKS
+    </div>
+
+
+    <div class="item">
+      <div>
+        <div class="item-name">
+          SOFT DRINKS
+        </div>
+      </div>
+
+      <div class="item-price">
+        €2.50
+      </div>
+    </div>
+
+
+    <div class="item">
+      <div>
+        <div class="item-name">
+          BEER
+        </div>
+      </div>
+
+      <div class="item-price">
+        €3.50
+      </div>
+    </div>
 
   </div>
+
 
   <footer>
-    <span>⚡</span> SMASH UP · SMASH BURGERS
+    <span>⚡</span>
+    SMASH UP · SMASH BURGERS
   </footer>
 
 </body>
