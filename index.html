@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="SmashUp Smash Burgers — Menu e contatti"
+    content="SmashUp Smash Burgers — Menu and contacts"
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,11 +20,6 @@
   />
 
   <style>
-
-    /* =========================
-       BASE
-    ========================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -43,55 +38,79 @@
       padding-bottom: 3rem;
     }
 
+    /* =========================
+       HERO / LOGO
+    ========================= */
 
-   /* =========================
-   HERO / LOGO
-========================= */
+    .hero {
+      text-align: center;
+      padding: 0.5rem 1.2rem 1.2rem;
+      border-bottom: 1px solid #222;
+      overflow: hidden;
+    }
 
-.hero {
-  text-align: center;
-  padding: 0.8rem 1.2rem 1.2rem;
-  border-bottom: 1px solid #222;
-  overflow: hidden;
-}
+    .main-logo {
+      display: block;
+      width: min(92%, 390px);
+      height: auto;
+      margin: -45px auto -55px;
+      object-fit: contain;
+    }
 
-.main-logo {
-  display: block;
-  width: min(92%, 390px);
-  height: auto;
-  margin: -55px auto -65px;
-  object-fit: contain;
-}
+    .tagline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      color: #777;
+      margin-top: 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-.tagline {
-  font-family: 'Oswald', sans-serif;
-  font-size: 12px;
-  color: #777;
-  margin-top: 0;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+    .divider {
+      width: 50px;
+      height: 1px;
+      background: #e8a020;
+      opacity: 0.55;
+      margin: 1rem auto 0;
+    }
 
-.divider {
-  width: 50px;
-  height: 1px;
-  background: #e8a020;
-  opacity: 0.55;
-  margin: 1rem auto 0;
-}
+    /* =========================
+       LANGUAGE SWITCH
+    ========================= */
 
-@media (max-width: 480px) {
-  .hero {
-    padding-top: 0.5rem;
-  }
+    .language-switch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 1.2rem auto 0;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
 
-  .main-logo {
-    width: 92%;
-    max-width: 370px;
-    margin: -45px auto -60px;
-  }
-}
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #555;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
 
+    .lang-btn:hover {
+      color: #e8a020;
+    }
+
+    .lang-btn.active {
+      color: #e8a020;
+    }
+
+    .lang-separator {
+      color: #333;
+    }
 
     /* =========================
        LINKS
@@ -99,9 +118,8 @@
 
     .links {
       max-width: 440px;
-      margin: 1.6rem auto 0;
+      margin: 1.2rem auto 0;
       padding: 0 1.2rem;
-
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -111,16 +129,12 @@
       display: flex;
       align-items: center;
       gap: 14px;
-
       background: #161616;
       border: 1px solid #2a2a2a;
       border-radius: 10px;
-
       padding: 14px 18px;
-
       text-decoration: none;
       color: #f0ead8;
-
       transition:
         border-color 0.2s,
         background 0.2s,
@@ -136,26 +150,22 @@
     .btn-icon {
       width: 38px;
       height: 38px;
-
       border-radius: 8px;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       flex-shrink: 0;
     }
 
     .btn-icon.ig {
-      background:
-        linear-gradient(
-          135deg,
-          #f09433,
-          #e6683c,
-          #dc2743,
-          #cc2366,
-          #bc1888
-        );
+      background: linear-gradient(
+        135deg,
+        #f09433,
+        #e6683c,
+        #dc2743,
+        #cc2366,
+        #bc1888
+      );
     }
 
     .btn-label {
@@ -174,7 +184,6 @@
       color: #e8a020;
     }
 
-
     /* =========================
        MENU
     ========================= */
@@ -187,105 +196,55 @@
 
     .section-label {
       text-align: center;
-
       font-family: 'Oswald', sans-serif;
       font-size: 11px;
-
       letter-spacing: 5px;
-
       color: #555;
-
       padding: 2rem 0 1rem;
     }
-
-
-    /* CATEGORIE */
 
     .category {
       font-family: 'Oswald', sans-serif;
       font-size: 12px;
-
       letter-spacing: 4px;
-
       color: #e8a020;
-
       margin: 1.8rem 0 0.5rem;
-
       padding-bottom: 7px;
-
       border-bottom: 1px solid #33280f;
     }
 
-
-    /* PRODOTTO */
-
     .item {
       display: flex;
-
       justify-content: space-between;
       align-items: baseline;
-
       padding: 12px 0;
-
       border-bottom: 1px solid #1a1a1a;
     }
 
     .item-name {
       font-family: 'Oswald', sans-serif;
-
       font-size: 17px;
-
       letter-spacing: 1px;
-
       color: #f0ead8;
-    }
-
-    .item-desc {
-      font-size: 11px;
-
-      color: #555;
-
-      margin-top: 4px;
-
-      letter-spacing: 0.3px;
-
-      max-width: 260px;
-
-      line-height: 1.5;
     }
 
     .item-price {
       font-family: 'Oswald', sans-serif;
-
       font-size: 17px;
-
       color: #e8a020;
-
       letter-spacing: 1px;
-
       flex-shrink: 0;
-
       margin-left: 12px;
     }
 
-
-    /* EXTRA */
-
     .extra-row {
       display: flex;
-
       justify-content: space-between;
-
       font-family: 'Oswald', sans-serif;
-
       font-size: 13px;
-
       color: #888;
-
       padding: 10px 0;
-
       border-bottom: 1px solid #171717;
-
       letter-spacing: 1px;
     }
 
@@ -293,22 +252,16 @@
       color: #e8a020;
     }
 
-
     /* =========================
        FOOTER
     ========================= */
 
     footer {
       text-align: center;
-
       margin-top: 3rem;
-
       font-family: 'Oswald', sans-serif;
-
       font-size: 11px;
-
       letter-spacing: 3px;
-
       color: #333;
     }
 
@@ -316,19 +269,19 @@
       color: #e8a020;
     }
 
-
     /* =========================
        MOBILE
     ========================= */
 
     @media (max-width: 480px) {
-
       .hero {
-        padding-top: 1.3rem;
+        padding-top: 0.3rem;
       }
 
       .main-logo {
-        width: 94%;
+        width: 92%;
+        max-width: 370px;
+        margin: -40px auto -55px;
       }
 
       .menu-wrap,
@@ -336,18 +289,14 @@
         padding-left: 1rem;
         padding-right: 1rem;
       }
-
     }
-
   </style>
 </head>
 
-
 <body>
 
-
   <!-- =========================
-       LOGO
+       HERO
   ========================== -->
 
   <header class="hero">
@@ -359,14 +308,40 @@
     />
 
     <p class="tagline">
-      One burger. Done right.
+      ONE BURGER. DONE RIGHT.
     </p>
 
     <div class="divider"></div>
 
   </header>
 
+  <!-- =========================
+       LANGUAGE
+  ========================== -->
 
+  <div class="language-switch">
+
+    <button
+      class="lang-btn active"
+      id="lang-en"
+      type="button"
+      onclick="setLanguage('en')"
+    >
+      EN
+    </button>
+
+    <span class="lang-separator">|</span>
+
+    <button
+      class="lang-btn"
+      id="lang-it"
+      type="button"
+      onclick="setLanguage('it')"
+    >
+      IT
+    </button>
+
+  </div>
 
   <!-- =========================
        INSTAGRAM
@@ -391,7 +366,6 @@
           stroke="white"
           stroke-width="2"
         >
-
           <rect
             x="2"
             y="2"
@@ -414,16 +388,17 @@
             fill="white"
             stroke="none"
           />
-
         </svg>
 
       </div>
 
-
-      <span class="btn-label">
-        SEGUICI SU INSTAGRAM
+      <span
+        class="btn-label"
+        data-en="FOLLOW US ON INSTAGRAM"
+        data-it="SEGUICI SU INSTAGRAM"
+      >
+        FOLLOW US ON INSTAGRAM
       </span>
-
 
       <svg
         class="btn-arrow"
@@ -434,16 +409,12 @@
         stroke="currentColor"
         stroke-width="2"
       >
-
         <path d="M5 12h14M12 5l7 7-7 7"/>
-
       </svg>
 
     </a>
 
   </div>
-
-
 
   <!-- =========================
        MENU
@@ -451,69 +422,41 @@
 
   <main class="menu-wrap">
 
-    <p class="section-label">
-      — IL NOSTRO MENU —
+    <p
+      class="section-label"
+      data-en="— OUR MENU —"
+      data-it="— IL NOSTRO MENU —"
+    >
+      — OUR MENU —
     </p>
 
-
-
-    <!-- =====================
-         THE SMASH
-    ====================== -->
+    <!-- THE SMASH -->
 
     <div class="category">
       THE SMASH
     </div>
 
-
     <div class="item">
-
-      <div>
-        <div class="item-name">
-          S
-        </div>
-      </div>
-
-      <div class="item-price">
-        €6.00
-      </div>
-
+      <div class="item-name">S</div>
+      <div class="item-price">€6.00</div>
     </div>
 
-
     <div class="item">
-
-      <div>
-        <div class="item-name">
-          M
-        </div>
-      </div>
-
-      <div class="item-price">
-        €8.00
-      </div>
-
+      <div class="item-name">M</div>
+      <div class="item-price">€8.00</div>
     </div>
 
-
     <div class="item">
-
-      <div>
-        <div class="item-name">
-          L
-        </div>
-      </div>
-
-      <div class="item-price">
-        €10.00
-      </div>
-
+      <div class="item-name">L</div>
+      <div class="item-price">€10.00</div>
     </div>
-
 
     <div class="extra-row">
 
-      <span>
+      <span
+        data-en="CRISPY BACON"
+        data-it="BACON CROCCANTE"
+      >
         CRISPY BACON
       </span>
 
@@ -523,23 +466,24 @@
 
     </div>
 
+    <!-- FRIES -->
 
-
-    <!-- =====================
-         FRIES
-    ====================== -->
-
-    <div class="category">
+    <div
+      class="category"
+      data-en="FRIES"
+      data-it="PATATINE"
+    >
       FRIES
     </div>
 
-
     <div class="item">
 
-      <div>
-        <div class="item-name">
-          REGULAR
-        </div>
+      <div
+        class="item-name"
+        data-en="REGULAR"
+        data-it="CLASSICHE"
+      >
+        REGULAR
       </div>
 
       <div class="item-price">
@@ -548,13 +492,14 @@
 
     </div>
 
-
     <div class="item">
 
-      <div>
-        <div class="item-name">
-          SWEET POTATO
-        </div>
+      <div
+        class="item-name"
+        data-en="SWEET POTATO"
+        data-it="PATATE DOLCI"
+      >
+        SWEET POTATO
       </div>
 
       <div class="item-price">
@@ -563,13 +508,14 @@
 
     </div>
 
-
     <div class="item">
 
-      <div>
-        <div class="item-name">
-          BACON & CHEESE
-        </div>
+      <div
+        class="item-name"
+        data-en="BACON &amp; CHEESE"
+        data-it="BACON &amp; FORMAGGIO"
+      >
+        BACON &amp; CHEESE
       </div>
 
       <div class="item-price">
@@ -578,23 +524,24 @@
 
     </div>
 
+    <!-- CHICKEN -->
 
-
-    <!-- =====================
-         CHICKEN
-    ====================== -->
-
-    <div class="category">
+    <div
+      class="category"
+      data-en="CHICKEN"
+      data-it="POLLO"
+    >
       CHICKEN
     </div>
 
-
     <div class="item">
 
-      <div>
-        <div class="item-name">
-          CHICKEN TENDERS
-        </div>
+      <div
+        class="item-name"
+        data-en="CHICKEN TENDERS"
+        data-it="STRACCETTI DI POLLO"
+      >
+        CHICKEN TENDERS
       </div>
 
       <div class="item-price">
@@ -603,23 +550,24 @@
 
     </div>
 
+    <!-- DRINKS -->
 
-
-    <!-- =====================
-         DRINKS
-    ====================== -->
-
-    <div class="category">
+    <div
+      class="category"
+      data-en="DRINKS"
+      data-it="BEVANDE"
+    >
       DRINKS
     </div>
 
-
     <div class="item">
 
-      <div>
-        <div class="item-name">
-          SOFT DRINKS
-        </div>
+      <div
+        class="item-name"
+        data-en="SOFT DRINKS"
+        data-it="BIBITE"
+      >
+        SOFT DRINKS
       </div>
 
       <div class="item-price">
@@ -628,13 +576,14 @@
 
     </div>
 
-
     <div class="item">
 
-      <div>
-        <div class="item-name">
-          BEER
-        </div>
+      <div
+        class="item-name"
+        data-en="BEER"
+        data-it="BIRRA"
+      >
+        BEER
       </div>
 
       <div class="item-price">
@@ -643,23 +592,48 @@
 
     </div>
 
-
   </main>
-
-
 
   <!-- =========================
        FOOTER
   ========================== -->
 
   <footer>
-
     <span>⚡</span>
-
     SMASHUP · SMASH BURGERS
-
   </footer>
 
+  <!-- =========================
+       LANGUAGE SCRIPT
+  ========================== -->
+
+  <script>
+    function setLanguage(language) {
+
+      const elements = document.querySelectorAll('[data-en][data-it]');
+
+      elements.forEach(function(element) {
+        element.innerHTML = element.getAttribute('data-' + language);
+      });
+
+      const englishButton = document.getElementById('lang-en');
+      const italianButton = document.getElementById('lang-it');
+
+      if (language === 'en') {
+        englishButton.classList.add('active');
+        italianButton.classList.remove('active');
+
+        document.documentElement.lang = 'en';
+      } else {
+        italianButton.classList.add('active');
+        englishButton.classList.remove('active');
+
+        document.documentElement.lang = 'it';
+      }
+    }
+
+    setLanguage('en');
+  </script>
 
 </body>
 </html>
