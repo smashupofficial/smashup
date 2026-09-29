@@ -100,10 +100,7 @@
       transition: color 0.2s;
     }
 
-    .lang-btn:hover {
-      color: #e8a020;
-    }
-
+    .lang-btn:hover,
     .lang-btn.active {
       color: #e8a020;
     }
@@ -216,9 +213,14 @@
     .item {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: flex-start;
+      gap: 15px;
       padding: 12px 0;
       border-bottom: 1px solid #1a1a1a;
+    }
+
+    .item-info {
+      flex: 1;
     }
 
     .item-name {
@@ -228,13 +230,39 @@
       color: #f0ead8;
     }
 
+    .item-desc {
+      font-size: 11px;
+      color: #666;
+      margin-top: 4px;
+      letter-spacing: 0.2px;
+      line-height: 1.5;
+      max-width: 300px;
+    }
+
+    .allergens {
+      font-size: 9px;
+      color: #444;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
     .item-price {
       font-family: 'Oswald', sans-serif;
       font-size: 17px;
       color: #e8a020;
       letter-spacing: 1px;
       flex-shrink: 0;
-      margin-left: 12px;
+      white-space: nowrap;
+    }
+
+    .item-qty {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      color: #666;
+      text-align: right;
+      margin-top: 3px;
+      letter-spacing: 0.5px;
     }
 
     .extra-row {
@@ -250,6 +278,46 @@
 
     .extra-price {
       color: #e8a020;
+    }
+
+    /* =========================
+       ALLERGEN INFO
+    ========================= */
+
+    .allergen-box {
+      margin-top: 2.2rem;
+      padding: 15px;
+      background: #121212;
+      border: 1px solid #222;
+      border-radius: 8px;
+    }
+
+    .allergen-title {
+      font-family: 'Oswald', sans-serif;
+      color: #e8a020;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .allergen-text {
+      color: #666;
+      font-size: 9px;
+      line-height: 1.6;
+    }
+
+    .allergen-legend {
+      color: #444;
+      font-size: 8px;
+      line-height: 1.6;
+      margin-top: 9px;
+    }
+
+    .frozen-note {
+      color: #555;
+      font-size: 9px;
+      line-height: 1.5;
+      margin-top: 10px;
     }
 
     /* =========================
@@ -289,15 +357,17 @@
         padding-left: 1rem;
         padding-right: 1rem;
       }
+
+      .item-desc {
+        max-width: 250px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- HERO -->
 
   <header class="hero">
 
@@ -315,9 +385,8 @@
 
   </header>
 
-  <!-- =========================
-       LANGUAGE
-  ========================== -->
+
+  <!-- LANGUAGE -->
 
   <div class="language-switch">
 
@@ -343,9 +412,8 @@
 
   </div>
 
-  <!-- =========================
-       INSTAGRAM
-  ========================== -->
+
+  <!-- INSTAGRAM -->
 
   <div class="links">
 
@@ -366,21 +434,8 @@
           stroke="white"
           stroke-width="2"
         >
-          <rect
-            x="2"
-            y="2"
-            width="20"
-            height="20"
-            rx="5"
-            ry="5"
-          />
-
-          <circle
-            cx="12"
-            cy="12"
-            r="4"
-          />
-
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
           <circle
             cx="17.5"
             cy="6.5"
@@ -416,9 +471,8 @@
 
   </div>
 
-  <!-- =========================
-       MENU
-  ========================== -->
+
+  <!-- MENU -->
 
   <main class="menu-wrap">
 
@@ -430,60 +484,175 @@
       — OUR MENU —
     </p>
 
-    <!-- THE SMASH -->
 
-    <div class="category">
-      THE SMASH
-    </div>
-
-    <div class="item">
-      <div class="item-name">S</div>
-      <div class="item-price">€6.00</div>
-    </div>
-
-    <div class="item">
-      <div class="item-name">M</div>
-      <div class="item-price">€8.00</div>
-    </div>
-
-    <div class="item">
-      <div class="item-name">L</div>
-      <div class="item-price">€10.00</div>
-    </div>
-
-    <div class="extra-row">
-
-      <span
-        data-en="CRISPY BACON"
-        data-it="BACON CROCCANTE"
-      >
-        CRISPY BACON
-      </span>
-
-      <span class="extra-price">
-        +€1.50
-      </span>
-
-    </div>
-
-    <!-- FRIES -->
+    <!-- BURGERS -->
 
     <div
       class="category"
-      data-en="FRIES"
-      data-it="PATATINE"
+      data-en="BURGERS"
+      data-it="BURGER"
     >
-      FRIES
+      BURGERS
     </div>
+
+
+    <!-- SMASH SINGLE -->
 
     <div class="item">
 
-      <div
-        class="item-name"
-        data-en="REGULAR"
-        data-it="CLASSICHE"
-      >
-        REGULAR
+      <div class="item-info">
+
+        <div class="item-name">
+          SMASH SINGLE
+        </div>
+
+        <div
+          class="item-desc"
+          data-en="Single beef burger*, cheddar, SMASHUP sauce"
+          data-it="Burger single*, cheddar, salsa SMASHUP"
+        >
+          Single beef burger*, cheddar, SMASHUP sauce
+        </div>
+
+        <div class="allergens">
+          (1,3,7,10)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €6.90
+      </div>
+
+    </div>
+
+    <div class="extra-row">
+      <span>+ BACON</span>
+      <span class="extra-price">+€1.00</span>
+    </div>
+
+
+    <!-- SMASH DOUBLE -->
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          SMASH DOUBLE
+        </div>
+
+        <div
+          class="item-desc"
+          data-en="Double beef burger*, cheddar, SMASHUP sauce"
+          data-it="Burger double*, cheddar, salsa SMASHUP"
+        >
+          Double beef burger*, cheddar, SMASHUP sauce
+        </div>
+
+        <div class="allergens">
+          (1,3,7,10)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €9.90
+      </div>
+
+    </div>
+
+    <div class="extra-row">
+      <span>+ BACON</span>
+      <span class="extra-price">+€1.00</span>
+    </div>
+
+
+    <!-- CHICKEN BURGER -->
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          CHICKEN BURGER
+        </div>
+
+        <div
+          class="item-desc"
+          data-en="Fried chicken cutlet*, cheddar, bacon, mayonnaise, pickle"
+          data-it="Cotoletta di pollo fritta*, cheddar, bacon, maionese, cetriolino sott'aceto"
+        >
+          Fried chicken cutlet*, cheddar, bacon, mayonnaise, pickle
+        </div>
+
+        <div class="allergens">
+          (1,3,7,10,12)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €7.90
+      </div>
+
+    </div>
+
+
+    <!-- VEGAN BURGER -->
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          VEGAN BURGER
+        </div>
+
+        <div
+          class="item-desc"
+          data-en="Vegan burger*, vegan cheddar, BBQ sauce, pickle"
+          data-it="Burger vegano*, cheddar vegano, salsa BBQ, cetriolino sott'aceto"
+        >
+          Vegan burger*, vegan cheddar, BBQ sauce, pickle
+        </div>
+
+        <div class="allergens">
+          (1,6,12)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €8.90
+      </div>
+
+    </div>
+
+
+    <!-- SIDES -->
+
+    <div
+      class="category"
+      data-en="SIDES"
+      data-it="CONTORNI"
+    >
+      SIDES
+    </div>
+
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div
+          class="item-name"
+          data-en="FRENCH FRIES*"
+          data-it="PATATINE FRITTE*"
+        >
+          FRENCH FRIES*
+        </div>
+
       </div>
 
       <div class="item-price">
@@ -492,14 +661,19 @@
 
     </div>
 
+
     <div class="item">
 
-      <div
-        class="item-name"
-        data-en="SWEET POTATO"
-        data-it="PATATE DOLCI"
-      >
-        SWEET POTATO
+      <div class="item-info">
+
+        <div
+          class="item-name"
+          data-en="SWEET POTATO FRIES*"
+          data-it="PATATE DOLCI FRITTE*"
+        >
+          SWEET POTATO FRIES*
+        </div>
+
       </div>
 
       <div class="item-price">
@@ -508,21 +682,6 @@
 
     </div>
 
-    <div class="item">
-
-      <div
-        class="item-name"
-        data-en="BACON &amp; CHEESE"
-        data-it="BACON &amp; FORMAGGIO"
-      >
-        BACON &amp; CHEESE
-      </div>
-
-      <div class="item-price">
-        €4.50
-      </div>
-
-    </div>
 
     <!-- CHICKEN -->
 
@@ -534,21 +693,135 @@
       CHICKEN
     </div>
 
+
+    <!-- NUGGETS -->
+
     <div class="item">
 
-      <div
-        class="item-name"
-        data-en="CHICKEN TENDERS"
-        data-it="FILETTI DI POLLO"
-      >
-        CHICKEN TENDERS
+      <div class="item-info">
+
+        <div class="item-name">
+          CHICKEN NUGGETS*
+        </div>
+
+        <div
+          class="item-desc"
+          data-en="Battered and fried chicken breast pieces"
+          data-it="Pezzi di petto di pollo pastellati e fritti"
+        >
+          Battered and fried chicken breast pieces
+        </div>
+
+        <div class="allergens">
+          (1,9)
+        </div>
+
       </div>
 
       <div class="item-price">
-        €4.90
+        €5.00
+        <span
+          class="item-qty"
+          data-en="6 PCS"
+          data-it="6 PZ"
+        >
+          6 PCS
+        </span>
       </div>
 
     </div>
+
+
+    <!-- TENDERS -->
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          CHICKEN TENDERS*
+        </div>
+
+        <div
+          class="item-desc"
+          data-en="Seasoned, breaded and fried chicken thigh fillets served with SMASHUP sauce"
+          data-it="Filetti di sovracoscia di pollo, speziati, impanati e fritti serviti con salsa SMASHUP"
+        >
+          Seasoned, breaded and fried chicken thigh fillets served with SMASHUP sauce
+        </div>
+
+        <div class="allergens">
+          (1,3,9,10)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €6.00
+        <span
+          class="item-qty"
+          data-en="4 PCS"
+          data-it="4 PZ"
+        >
+          4 PCS
+        </span>
+      </div>
+
+    </div>
+
+
+    <!-- SAUCES -->
+
+    <div
+      class="category"
+      data-en="SAUCES"
+      data-it="SALSE"
+    >
+      SAUCES
+    </div>
+
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          HEINZ
+        </div>
+
+        <div class="allergens">
+          (3,10)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €0.50
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          SMASHUP SAUCE
+        </div>
+
+        <div class="allergens">
+          (1,3,10)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €1.00
+      </div>
+
+    </div>
+
 
     <!-- DRINKS -->
 
@@ -560,71 +833,211 @@
       DRINKS
     </div>
 
+
     <div class="item">
 
       <div
         class="item-name"
-        data-en="SOFT DRINKS"
-        data-it="BIBITE"
+        data-en="WATER"
+        data-it="ACQUA"
       >
-        SOFT DRINKS
+        WATER
       </div>
 
       <div class="item-price">
-        €2.50
+        €1.00
       </div>
 
     </div>
 
+
     <div class="item">
 
       <div
         class="item-name"
-        data-en="BEER"
-        data-it="BIRRA"
+        data-en="SOFT DRINK"
+        data-it="BIBITA"
       >
-        BEER
+        SOFT DRINK
       </div>
 
       <div class="item-price">
-        €3.50
+        €2.00
+        <span class="item-qty">33CL</span>
+      </div>
+
+    </div>
+
+
+    <!-- BEERS -->
+
+    <div
+      class="category"
+      data-en="BEERS"
+      data-it="BIRRE"
+    >
+      BEERS
+    </div>
+
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          NASTRO
+        </div>
+
+        <div class="allergens">
+          (1)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €3.00
+        <span class="item-qty">33CL</span>
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          RAFFO GREZZA
+        </div>
+
+        <div class="allergens">
+          (1)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €4.00
+        <span class="item-qty">33CL</span>
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="item-info">
+
+        <div class="item-name">
+          ICHNUSA NON FILTRATA
+        </div>
+
+        <div class="allergens">
+          (1)
+        </div>
+
+      </div>
+
+      <div class="item-price">
+        €5.00
+        <span class="item-qty">50CL</span>
+      </div>
+
+    </div>
+
+
+    <!-- ALLERGENS -->
+
+    <div class="allergen-box">
+
+      <div
+        class="allergen-title"
+        data-en="ALLERGEN INFORMATION"
+        data-it="INFORMAZIONI SUGLI ALLERGENI"
+      >
+        ALLERGEN INFORMATION
+      </div>
+
+      <div
+        class="allergen-text"
+        data-en="If you have any food allergies or intolerances, please inform our staff before ordering. Please refer to the numbers shown next to each item or ask our staff for the relevant allergen documentation."
+        data-it="Se hai allergie o intolleranze alimentari, informa il personale prima di ordinare. Per conoscere gli allergeni presenti in ciascun piatto, consulta i numeri indicati accanto al piatto oppure chiedi al personale la relativa documentazione."
+      >
+        If you have any food allergies or intolerances, please inform our staff before ordering. Please refer to the numbers shown next to each item or ask our staff for the relevant allergen documentation.
+      </div>
+
+
+      <div
+        class="allergen-legend"
+        data-en="1. Cereals containing gluten · 2. Crustaceans · 3. Eggs · 4. Fish · 5. Peanuts · 6. Soy · 7. Milk and dairy products · 8. Nuts · 9. Celery · 10. Mustard · 11. Sesame seeds · 12. Sulphur dioxide and sulphites · 13. Lupin · 14. Molluscs"
+        data-it="1. Cereali contenenti glutine · 2. Crostacei · 3. Uova · 4. Pesce · 5. Arachidi · 6. Soia · 7. Latte e prodotti a base di latte (incluso il lattosio) · 8. Frutta a guscio · 9. Sedano · 10. Senape · 11. Semi di sesamo · 12. Anidride solforosa e solfiti · 13. Lupini · 14. Molluschi"
+      >
+        1. Cereals containing gluten ·
+        2. Crustaceans ·
+        3. Eggs ·
+        4. Fish ·
+        5. Peanuts ·
+        6. Soy ·
+        7. Milk and dairy products ·
+        8. Nuts ·
+        9. Celery ·
+        10. Mustard ·
+        11. Sesame seeds ·
+        12. Sulphur dioxide and sulphites ·
+        13. Lupin ·
+        14. Molluscs
+      </div>
+
+
+      <div
+        class="frozen-note"
+        data-en="* Product frozen or deep-frozen at origin."
+        data-it="* Il prodotto contrassegnato con asterisco è congelato o surgelato all'origine."
+      >
+        * Product frozen or deep-frozen at origin.
       </div>
 
     </div>
 
   </main>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+
+  <!-- FOOTER -->
 
   <footer>
     <span>⚡</span>
     SMASHUP · SMASH BURGERS
   </footer>
 
-  <!-- =========================
-       LANGUAGE SCRIPT
-  ========================== -->
+
+  <!-- LANGUAGE SCRIPT -->
 
   <script>
     function setLanguage(language) {
 
-      const elements = document.querySelectorAll('[data-en][data-it]');
+      const elements =
+        document.querySelectorAll('[data-en][data-it]');
 
       elements.forEach(function(element) {
-        element.innerHTML = element.getAttribute('data-' + language);
+        element.innerHTML =
+          element.getAttribute('data-' + language);
       });
 
-      const englishButton = document.getElementById('lang-en');
-      const italianButton = document.getElementById('lang-it');
+      const englishButton =
+        document.getElementById('lang-en');
+
+      const italianButton =
+        document.getElementById('lang-it');
 
       if (language === 'en') {
+
         englishButton.classList.add('active');
         italianButton.classList.remove('active');
 
         document.documentElement.lang = 'en';
+
       } else {
+
         italianButton.classList.add('active');
         englishButton.classList.remove('active');
 
