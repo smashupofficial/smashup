@@ -265,9 +265,14 @@
       letter-spacing: 0.5px;
     }
 
+    /* =========================
+       EXTRAS
+    ========================= */
+
     .extra-row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       font-family: 'Oswald', sans-serif;
       font-size: 13px;
       color: #888;
@@ -306,18 +311,21 @@
       line-height: 1.6;
     }
 
+    /* Legenda allergeni più piccola */
     .allergen-legend {
       color: #444;
-      font-size: 8px;
-      line-height: 1.6;
-      margin-top: 9px;
+      font-size: 7px;
+      line-height: 1.45;
+      margin-top: 8px;
+      letter-spacing: 0;
     }
 
+    /* Nota prodotti congelati più discreta */
     .frozen-note {
       color: #555;
-      font-size: 9px;
-      line-height: 1.5;
-      margin-top: 10px;
+      font-size: 8px;
+      line-height: 1.4;
+      margin-top: 9px;
     }
 
     /* =========================
@@ -361,13 +369,20 @@
       .item-desc {
         max-width: 250px;
       }
+
+      .allergen-legend {
+        font-size: 6.5px;
+        line-height: 1.4;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
   <header class="hero">
 
@@ -386,7 +401,9 @@
   </header>
 
 
-  <!-- LANGUAGE -->
+  <!-- =========================
+       LANGUAGE
+  ========================== -->
 
   <div class="language-switch">
 
@@ -413,7 +430,9 @@
   </div>
 
 
-  <!-- INSTAGRAM -->
+  <!-- =========================
+       INSTAGRAM
+  ========================== -->
 
   <div class="links">
 
@@ -434,8 +453,21 @@
           stroke="white"
           stroke-width="2"
         >
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <circle cx="12" cy="12" r="4"/>
+          <rect
+            x="2"
+            y="2"
+            width="20"
+            height="20"
+            rx="5"
+            ry="5"
+          />
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+          />
+
           <circle
             cx="17.5"
             cy="6.5"
@@ -472,7 +504,9 @@
   </div>
 
 
-  <!-- MENU -->
+  <!-- =========================
+       MENU
+  ========================== -->
 
   <main class="menu-wrap">
 
@@ -485,7 +519,9 @@
     </p>
 
 
-    <!-- BURGERS -->
+    <!-- =========================
+         BURGERS
+    ========================== -->
 
     <div
       class="category"
@@ -526,9 +562,17 @@
 
     </div>
 
+
+    <!-- SINGLE EXTRAS -->
+
     <div class="extra-row">
       <span>+ BACON</span>
       <span class="extra-price">+€1.00</span>
+    </div>
+
+    <div class="extra-row">
+      <span>+ PICKLES</span>
+      <span class="extra-price">FREE</span>
     </div>
 
 
@@ -562,9 +606,17 @@
 
     </div>
 
+
+    <!-- DOUBLE EXTRAS -->
+
     <div class="extra-row">
       <span>+ BACON</span>
       <span class="extra-price">+€1.00</span>
+    </div>
+
+    <div class="extra-row">
+      <span>+ PICKLES</span>
+      <span class="extra-price">FREE</span>
     </div>
 
 
@@ -630,7 +682,9 @@
     </div>
 
 
-    <!-- SIDES -->
+    <!-- =========================
+         SIDES
+    ========================== -->
 
     <div
       class="category"
@@ -683,7 +737,9 @@
     </div>
 
 
-    <!-- CHICKEN -->
+    <!-- =========================
+         CHICKEN
+    ========================== -->
 
     <div
       class="category"
@@ -694,7 +750,7 @@
     </div>
 
 
-    <!-- NUGGETS -->
+    <!-- CHICKEN NUGGETS -->
 
     <div class="item">
 
@@ -720,6 +776,7 @@
 
       <div class="item-price">
         €5.00
+
         <span
           class="item-qty"
           data-en="6 PCS"
@@ -727,12 +784,13 @@
         >
           6 PCS
         </span>
+
       </div>
 
     </div>
 
 
-    <!-- TENDERS -->
+    <!-- CHICKEN TENDERS -->
 
     <div class="item">
 
@@ -758,6 +816,7 @@
 
       <div class="item-price">
         €6.00
+
         <span
           class="item-qty"
           data-en="4 PCS"
@@ -765,12 +824,15 @@
         >
           4 PCS
         </span>
+
       </div>
 
     </div>
 
 
-    <!-- SAUCES -->
+    <!-- =========================
+         SAUCES
+    ========================== -->
 
     <div
       class="category"
@@ -823,7 +885,9 @@
     </div>
 
 
-    <!-- DRINKS -->
+    <!-- =========================
+         DRINKS
+    ========================== -->
 
     <div
       class="category"
@@ -869,7 +933,9 @@
     </div>
 
 
-    <!-- BEERS -->
+    <!-- =========================
+         BEERS
+    ========================== -->
 
     <div
       class="category"
@@ -946,7 +1012,9 @@
     </div>
 
 
-    <!-- ALLERGENS -->
+    <!-- =========================
+         ALLERGENS
+    ========================== -->
 
     <div class="allergen-box">
 
@@ -957,6 +1025,7 @@
       >
         ALLERGEN INFORMATION
       </div>
+
 
       <div
         class="allergen-text"
@@ -1002,7 +1071,9 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
     <span>⚡</span>
@@ -1010,24 +1081,31 @@
   </footer>
 
 
-  <!-- LANGUAGE SCRIPT -->
+  <!-- =========================
+       LANGUAGE SCRIPT
+  ========================== -->
 
   <script>
+
     function setLanguage(language) {
 
       const elements =
         document.querySelectorAll('[data-en][data-it]');
 
       elements.forEach(function(element) {
+
         element.innerHTML =
           element.getAttribute('data-' + language);
+
       });
+
 
       const englishButton =
         document.getElementById('lang-en');
 
       const italianButton =
         document.getElementById('lang-it');
+
 
       if (language === 'en') {
 
@@ -1042,10 +1120,15 @@
         englishButton.classList.remove('active');
 
         document.documentElement.lang = 'it';
+
       }
+
     }
 
+
+    /* English is the default language */
     setLanguage('en');
+
   </script>
 
 </body>
