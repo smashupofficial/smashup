@@ -20,6 +20,11 @@
   />
 
   <style>
+
+    /* =========================
+       BASE
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -37,6 +42,7 @@
       min-height: 100vh;
       padding-bottom: 3rem;
     }
+
 
     /* =========================
        HERO / LOGO
@@ -74,6 +80,7 @@
       margin: 1rem auto 0;
     }
 
+
     /* =========================
        LANGUAGE SWITCH
     ========================= */
@@ -84,6 +91,7 @@
       align-items: center;
       gap: 8px;
       margin: 1.2rem auto 0;
+
       font-family: 'Oswald', sans-serif;
       font-size: 12px;
       letter-spacing: 2px;
@@ -93,10 +101,13 @@
       background: transparent;
       border: none;
       color: #555;
+
       font-family: 'Oswald', sans-serif;
       font-size: 12px;
       letter-spacing: 2px;
+
       cursor: pointer;
+
       transition: color 0.2s;
     }
 
@@ -109,6 +120,7 @@
       color: #333;
     }
 
+
     /* =========================
        LINKS
     ========================= */
@@ -117,6 +129,7 @@
       max-width: 440px;
       margin: 1.2rem auto 0;
       padding: 0 1.2rem;
+
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -126,12 +139,16 @@
       display: flex;
       align-items: center;
       gap: 14px;
+
       background: #161616;
       border: 1px solid #2a2a2a;
       border-radius: 10px;
+
       padding: 14px 18px;
+
       text-decoration: none;
       color: #f0ead8;
+
       transition:
         border-color 0.2s,
         background 0.2s,
@@ -148,9 +165,11 @@
       width: 38px;
       height: 38px;
       border-radius: 8px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       flex-shrink: 0;
     }
 
@@ -181,6 +200,7 @@
       color: #e8a020;
     }
 
+
     /* =========================
        MENU
     ========================= */
@@ -193,10 +213,13 @@
 
     .section-label {
       text-align: center;
+
       font-family: 'Oswald', sans-serif;
       font-size: 11px;
       letter-spacing: 5px;
+
       color: #555;
+
       padding: 2rem 0 1rem;
     }
 
@@ -204,9 +227,12 @@
       font-family: 'Oswald', sans-serif;
       font-size: 12px;
       letter-spacing: 4px;
+
       color: #e8a020;
+
       margin: 1.8rem 0 0.5rem;
       padding-bottom: 7px;
+
       border-bottom: 1px solid #33280f;
     }
 
@@ -214,8 +240,11 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+
       gap: 15px;
+
       padding: 12px 0;
+
       border-bottom: 1px solid #1a1a1a;
     }
 
@@ -227,43 +256,58 @@
       font-family: 'Oswald', sans-serif;
       font-size: 17px;
       letter-spacing: 1px;
+
       color: #f0ead8;
     }
 
     .item-desc {
       font-size: 11px;
       color: #666;
+
       margin-top: 4px;
+
       letter-spacing: 0.2px;
       line-height: 1.5;
+
       max-width: 300px;
     }
 
     .allergens {
       font-size: 9px;
       color: #444;
+
       margin-top: 4px;
+
       letter-spacing: 0.5px;
     }
 
     .item-price {
       font-family: 'Oswald', sans-serif;
       font-size: 17px;
+
       color: #e8a020;
+
       letter-spacing: 1px;
+
       flex-shrink: 0;
       white-space: nowrap;
     }
 
     .item-qty {
       display: block;
+
       font-family: 'Inter', sans-serif;
       font-size: 9px;
+
       color: #666;
+
       text-align: right;
+
       margin-top: 3px;
+
       letter-spacing: 0.5px;
     }
+
 
     /* =========================
        EXTRAS
@@ -273,11 +317,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       font-family: 'Oswald', sans-serif;
       font-size: 13px;
+
       color: #888;
+
       padding: 10px 0;
+
       border-bottom: 1px solid #171717;
+
       letter-spacing: 1px;
     }
 
@@ -285,48 +334,62 @@
       color: #e8a020;
     }
 
+
     /* =========================
        ALLERGEN INFO
     ========================= */
 
     .allergen-box {
       margin-top: 2.2rem;
+
       padding: 15px;
+
       background: #121212;
+
       border: 1px solid #222;
       border-radius: 8px;
     }
 
     .allergen-title {
       font-family: 'Oswald', sans-serif;
+
       color: #e8a020;
+
       font-size: 11px;
       letter-spacing: 2px;
+
       margin-bottom: 8px;
     }
 
     .allergen-text {
       color: #666;
+
       font-size: 9px;
       line-height: 1.6;
     }
 
-    /* Legenda allergeni più piccola */
+    /* Legenda più piccola */
+
     .allergen-legend {
       color: #444;
+
       font-size: 7px;
       line-height: 1.45;
+
       margin-top: 8px;
+
       letter-spacing: 0;
     }
 
-    /* Nota prodotti congelati più discreta */
     .frozen-note {
       color: #555;
+
       font-size: 8px;
       line-height: 1.4;
+
       margin-top: 9px;
     }
+
 
     /* =========================
        FOOTER
@@ -334,10 +397,14 @@
 
     footer {
       text-align: center;
+
       margin-top: 3rem;
+
       font-family: 'Oswald', sans-serif;
       font-size: 11px;
+
       letter-spacing: 3px;
+
       color: #333;
     }
 
@@ -345,11 +412,13 @@
       color: #e8a020;
     }
 
+
     /* =========================
        MOBILE
     ========================= */
 
     @media (max-width: 480px) {
+
       .hero {
         padding-top: 0.3rem;
       }
@@ -357,6 +426,7 @@
       .main-logo {
         width: 92%;
         max-width: 370px;
+
         margin: -40px auto -55px;
       }
 
@@ -374,11 +444,15 @@
         font-size: 6.5px;
         line-height: 1.4;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =========================
        HERO
@@ -416,7 +490,9 @@
       EN
     </button>
 
-    <span class="lang-separator">|</span>
+    <span class="lang-separator">
+      |
+    </span>
 
     <button
       class="lang-btn"
@@ -453,6 +529,7 @@
           stroke="white"
           stroke-width="2"
         >
+
           <rect
             x="2"
             y="2"
@@ -475,9 +552,11 @@
             fill="white"
             stroke="none"
           />
+
         </svg>
 
       </div>
+
 
       <span
         class="btn-label"
@@ -486,6 +565,7 @@
       >
         FOLLOW US ON INSTAGRAM
       </span>
+
 
       <svg
         class="btn-arrow"
@@ -496,7 +576,9 @@
         stroke="currentColor"
         stroke-width="2"
       >
+
         <path d="M5 12h14M12 5l7 7-7 7"/>
+
       </svg>
 
     </a>
@@ -520,26 +602,24 @@
 
 
     <!-- =========================
-         BURGERS
+         THE SMASH
     ========================== -->
 
-    <div
-      class="category"
-      data-en="BURGERS"
-      data-it="BURGER"
-    >
-      BURGERS
+    <div class="category">
+      THE SMASH
     </div>
 
 
-    <!-- SMASH SINGLE -->
+    <!-- =========================
+         SINGLE
+    ========================== -->
 
     <div class="item">
 
       <div class="item-info">
 
         <div class="item-name">
-          SMASH SINGLE
+          SINGLE
         </div>
 
         <div
@@ -556,6 +636,7 @@
 
       </div>
 
+
       <div class="item-price">
         €6.90
       </div>
@@ -566,24 +647,41 @@
     <!-- SINGLE EXTRAS -->
 
     <div class="extra-row">
-      <span>+ BACON</span>
-      <span class="extra-price">+€1.00</span>
+
+      <span>
+        + BACON
+      </span>
+
+      <span class="extra-price">
+        +€1.00
+      </span>
+
     </div>
+
 
     <div class="extra-row">
-      <span>+ PICKLES</span>
-      <span class="extra-price">FREE</span>
+
+      <span>
+        + PICKLES
+      </span>
+
+      <span class="extra-price">
+        FREE
+      </span>
+
     </div>
 
 
-    <!-- SMASH DOUBLE -->
+    <!-- =========================
+         DOUBLE
+    ========================== -->
 
     <div class="item">
 
       <div class="item-info">
 
         <div class="item-name">
-          SMASH DOUBLE
+          DOUBLE
         </div>
 
         <div
@@ -600,6 +698,7 @@
 
       </div>
 
+
       <div class="item-price">
         €9.90
       </div>
@@ -610,17 +709,34 @@
     <!-- DOUBLE EXTRAS -->
 
     <div class="extra-row">
-      <span>+ BACON</span>
-      <span class="extra-price">+€1.00</span>
+
+      <span>
+        + BACON
+      </span>
+
+      <span class="extra-price">
+        +€1.00
+      </span>
+
     </div>
+
 
     <div class="extra-row">
-      <span>+ PICKLES</span>
-      <span class="extra-price">FREE</span>
+
+      <span>
+        + PICKLES
+      </span>
+
+      <span class="extra-price">
+        FREE
+      </span>
+
     </div>
 
 
-    <!-- CHICKEN BURGER -->
+    <!-- =========================
+         CHICKEN BURGER
+    ========================== -->
 
     <div class="item">
 
@@ -644,6 +760,7 @@
 
       </div>
 
+
       <div class="item-price">
         €7.90
       </div>
@@ -651,7 +768,9 @@
     </div>
 
 
-    <!-- VEGAN BURGER -->
+    <!-- =========================
+         VEGAN BURGER
+    ========================== -->
 
     <div class="item">
 
@@ -675,6 +794,7 @@
 
       </div>
 
+
       <div class="item-price">
         €8.90
       </div>
@@ -695,6 +815,8 @@
     </div>
 
 
+    <!-- FRENCH FRIES -->
+
     <div class="item">
 
       <div class="item-info">
@@ -709,12 +831,15 @@
 
       </div>
 
+
       <div class="item-price">
         €3.00
       </div>
 
     </div>
 
+
+    <!-- SWEET POTATO FRIES -->
 
     <div class="item">
 
@@ -729,6 +854,7 @@
         </div>
 
       </div>
+
 
       <div class="item-price">
         €4.00
@@ -774,7 +900,9 @@
 
       </div>
 
+
       <div class="item-price">
+
         €5.00
 
         <span
@@ -814,7 +942,9 @@
 
       </div>
 
+
       <div class="item-price">
+
         €6.00
 
         <span
@@ -843,6 +973,8 @@
     </div>
 
 
+    <!-- HEINZ -->
+
     <div class="item">
 
       <div class="item-info">
@@ -857,12 +989,15 @@
 
       </div>
 
+
       <div class="item-price">
         €0.50
       </div>
 
     </div>
 
+
+    <!-- SMASHUP SAUCE -->
 
     <div class="item">
 
@@ -877,6 +1012,7 @@
         </div>
 
       </div>
+
 
       <div class="item-price">
         €1.00
@@ -898,6 +1034,8 @@
     </div>
 
 
+    <!-- WATER -->
+
     <div class="item">
 
       <div
@@ -908,12 +1046,15 @@
         WATER
       </div>
 
+
       <div class="item-price">
         €1.00
       </div>
 
     </div>
 
+
+    <!-- SOFT DRINK -->
 
     <div class="item">
 
@@ -925,9 +1066,15 @@
         SOFT DRINK
       </div>
 
+
       <div class="item-price">
+
         €2.00
-        <span class="item-qty">33CL</span>
+
+        <span class="item-qty">
+          33CL
+        </span>
+
       </div>
 
     </div>
@@ -946,6 +1093,8 @@
     </div>
 
 
+    <!-- NASTRO -->
+
     <div class="item">
 
       <div class="item-info">
@@ -960,13 +1109,21 @@
 
       </div>
 
+
       <div class="item-price">
+
         €3.00
-        <span class="item-qty">33CL</span>
+
+        <span class="item-qty">
+          33CL
+        </span>
+
       </div>
 
     </div>
 
+
+    <!-- RAFFO GREZZA -->
 
     <div class="item">
 
@@ -982,13 +1139,21 @@
 
       </div>
 
+
       <div class="item-price">
+
         €4.00
-        <span class="item-qty">33CL</span>
+
+        <span class="item-qty">
+          33CL
+        </span>
+
       </div>
 
     </div>
 
+
+    <!-- ICHNUSA -->
 
     <div class="item">
 
@@ -1004,19 +1169,26 @@
 
       </div>
 
+
       <div class="item-price">
+
         €5.00
-        <span class="item-qty">50CL</span>
+
+        <span class="item-qty">
+          50CL
+        </span>
+
       </div>
 
     </div>
 
 
     <!-- =========================
-         ALLERGENS
+         ALLERGEN INFORMATION
     ========================== -->
 
     <div class="allergen-box">
+
 
       <div
         class="allergen-title"
@@ -1038,9 +1210,12 @@
 
       <div
         class="allergen-legend"
+
         data-en="1. Cereals containing gluten · 2. Crustaceans · 3. Eggs · 4. Fish · 5. Peanuts · 6. Soy · 7. Milk and dairy products · 8. Nuts · 9. Celery · 10. Mustard · 11. Sesame seeds · 12. Sulphur dioxide and sulphites · 13. Lupin · 14. Molluscs"
+
         data-it="1. Cereali contenenti glutine · 2. Crostacei · 3. Uova · 4. Pesce · 5. Arachidi · 6. Soia · 7. Latte e prodotti a base di latte (incluso il lattosio) · 8. Frutta a guscio · 9. Sedano · 10. Senape · 11. Semi di sesamo · 12. Anidride solforosa e solfiti · 13. Lupini · 14. Molluschi"
       >
+
         1. Cereals containing gluten ·
         2. Crustaceans ·
         3. Eggs ·
@@ -1055,12 +1230,15 @@
         12. Sulphur dioxide and sulphites ·
         13. Lupin ·
         14. Molluscs
+
       </div>
 
 
       <div
         class="frozen-note"
+
         data-en="* Product frozen or deep-frozen at origin."
+
         data-it="* Il prodotto contrassegnato con asterisco è congelato o surgelato all'origine."
       >
         * Product frozen or deep-frozen at origin.
@@ -1076,8 +1254,11 @@
   ========================== -->
 
   <footer>
+
     <span>⚡</span>
+
     SMASHUP · SMASH BURGERS
+
   </footer>
 
 
@@ -1091,6 +1272,7 @@
 
       const elements =
         document.querySelectorAll('[data-en][data-it]');
+
 
       elements.forEach(function(element) {
 
@@ -1126,10 +1308,12 @@
     }
 
 
-    /* English is the default language */
+    /* English default */
+
     setLanguage('en');
 
   </script>
+
 
 </body>
 </html>
