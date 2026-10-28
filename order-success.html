@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmashUp — Order confirmed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/order.css" />
+</head>
+<body>
+  <header class="hero">
+    <img class="main-logo" src="smashup-logo.png" alt="SmashUp" />
+    <p class="tagline" data-en="Pickup order" data-it="Ordine asporto">Pickup order</p>
+    <div class="divider"></div>
+  </header>
+
+  <div class="language-switch">
+    <button class="lang-btn" id="lang-en" type="button">EN</button>
+    <span class="lang-separator">|</span>
+    <button class="lang-btn" id="lang-it" type="button">IT</button>
+  </div>
+
+  <div class="wrap">
+    <a class="back-link" href="index.html" data-en="← MENU" data-it="← MENU">← MENU</a>
+    <div class="form-box">
+      <p class="category" data-en="YOUR ORDER NUMBER" data-it="IL TUO NUMERO D'ORDINE">YOUR ORDER NUMBER</p>
+      <div class="order-number" id="order-number">…</div>
+      <p class="empty" id="order-status" data-en="Waiting for payment confirmation." data-it="In attesa della conferma di pagamento.">Waiting for payment confirmation.</p>
+      <p class="contact-line" id="public-contact"></p>
+    </div>
+  </div>
+
+  <footer><span>⚡</span> SMASHUP · SMASH BURGERS</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/success.js"></script>
+</body>
+</html>

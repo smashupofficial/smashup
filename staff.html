@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>SmashUp — Staff</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/order.css" />
+</head>
+<body>
+  <header class="hero">
+    <img class="main-logo" src="smashup-logo.png" alt="SmashUp" />
+    <p class="tagline">Staff</p>
+    <div class="divider"></div>
+  </header>
+
+  <div class="wrap staff-wrap">
+    <section id="login-view" class="login-card">
+      <form id="login-form">
+        <div class="category">STAFF LOGIN</div>
+        <label class="field">Email <input id="staff-email" type="email" required autocomplete="username" value="info@smashupburgers.it" /></label>
+        <label class="field">Password <input id="staff-password" type="password" required autocomplete="current-password" /></label>
+        <p class="error" id="login-error" hidden></p>
+        <button class="primary" type="submit">ENTER</button>
+      </form>
+    </section>
+
+    <section id="dash-view" hidden>
+      <button type="button" id="logout-btn">Log out</button>
+      <div class="category">PAID ORDERS</div>
+      <div id="order-list"></div>
+    </section>
+  </div>
+
+  <footer><span>⚡</span> SMASHUP · SMASH BURGERS</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/staff.js"></script>
+</body>
+</html>

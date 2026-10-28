@@ -213,6 +213,97 @@
       color: #e8a020;
     }
 
+    .btn-icon.order {
+      background: #e8a020;
+      color: #0d0d0d;
+    }
+
+    .btn-label-stack {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .btn-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.6px;
+      color: #888;
+    }
+
+
+
+    /* =========================
+       ORDINI ONLINE (sezione dedicata)
+    ========================= */
+
+    .order-section {
+      max-width: 440px;
+      margin: 1.6rem auto 0;
+      padding: 0 1.2rem;
+    }
+
+    .order-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #33280f;
+      background: linear-gradient(180deg, #1a1408 0%, #121212 100%);
+      padding: 1.15rem 1.1rem 1.2rem;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .order-card:hover {
+      border-color: #e8a020;
+      transform: translateY(-1px);
+    }
+
+    .order-card-kicker {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #e8a020;
+      text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+
+    .order-card-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 22px;
+      letter-spacing: 1.5px;
+      color: #f0ead8;
+      margin-bottom: 0.35rem;
+    }
+
+    .order-card-text {
+      font-size: 12px;
+      line-height: 1.55;
+      color: #888;
+      margin-bottom: 0.85rem;
+    }
+
+    .order-card-meta {
+      font-size: 11px;
+      line-height: 1.5;
+      color: #aaa;
+      margin-bottom: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    .order-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #0d0d0d;
+      background: #e8a020;
+      padding: 0.55rem 0.9rem;
+    }
 
     /* =========================
        MENU
@@ -597,6 +688,41 @@
     </a>
 
   </div>
+
+
+  <!-- =========================
+       ORDINI ONLINE (sezione a parte)
+  ========================== -->
+
+  <section class="order-section" aria-label="Online orders">
+    <a class="order-card" href="order.html">
+      <div
+        class="order-card-kicker"
+        data-en="Pickup orders"
+        data-it="Ordini asporto"
+      >Pickup orders</div>
+      <div
+        class="order-card-title"
+        data-en="ORDER ONLINE"
+        data-it="ORDINA ONLINE"
+      >ORDER ONLINE</div>
+      <p
+        class="order-card-text"
+        data-en="Browse the classic menu below, then open the orders page to choose items and pick a pickup time."
+        data-it="Sfoglia il menu classico qui sotto, poi apri la pagina ordini per scegliere cosa prendere e l'orario di ritiro."
+      >Browse the classic menu below, then open the orders page to choose items and pick a pickup time.</p>
+      <p
+        class="order-card-meta"
+        data-en="Available Mon, Wed, Thu, Fri · 18:30–23:30. Closed Tue, Sat, Sun."
+        data-it="Disponibile lun, mer, gio, ven · 18:30–23:30. Chiuso mar, sab, dom."
+      >Available Mon, Wed, Thu, Fri · 18:30–23:30. Closed Tue, Sat, Sun.</p>
+      <span
+        class="order-card-cta"
+        data-en="GO TO ORDERS →"
+        data-it="VAI AGLI ORDINI →"
+      >GO TO ORDERS →</span>
+    </a>
+  </section>
 
 
   <!-- =========================
@@ -1283,6 +1409,10 @@
 
     function setLanguage(language) {
 
+      try {
+        localStorage.setItem('smashup_lang', language);
+      } catch (e) {}
+
       const elements =
         document.querySelectorAll('[data-en][data-it]');
 
@@ -1321,9 +1451,13 @@
     }
 
 
-    /* English default */
+    /* English default, unless previously chosen */
 
-    setLanguage('en');
+    var savedLang = 'en';
+    try {
+      savedLang = localStorage.getItem('smashup_lang') || 'en';
+    } catch (e) {}
+    setLanguage(savedLang === 'it' ? 'it' : 'en');
 
   </script>
 

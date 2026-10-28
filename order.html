@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmashUp — Order pickup</title>
+  <meta name="description" content="SmashUp pickup ordering" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/order.css" />
+</head>
+<body>
+  <header class="hero">
+    <img class="main-logo" src="smashup-logo.png" alt="SmashUp" />
+    <p class="tagline" data-en="Pickup order" data-it="Ordine asporto">Pickup order</p>
+    <div class="divider"></div>
+  </header>
+
+  <div class="language-switch">
+    <button class="lang-btn" id="lang-en" type="button">EN</button>
+    <span class="lang-separator">|</span>
+    <button class="lang-btn" id="lang-it" type="button">IT</button>
+  </div>
+
+  <div class="wrap">
+    <a class="back-link" href="index.html" data-en="← MENU" data-it="← MENU">← MENU</a>
+
+    <div class="banner" id="progress-banner">
+      <strong data-en="In progress" data-it="In arrivo">In progress</strong>
+      <span data-en=" — you can preview the menu and cart, but payment is not available yet." data-it=" — puoi vedere menu e carrello, ma il pagamento non è ancora disponibile."> — you can preview the menu and cart, but payment is not available yet.</span>
+    </div>
+
+    <div class="banner" id="schedule-banner">
+      <strong data-en="Online orders" data-it="Ordini online">Online orders</strong>
+      <span data-en=": Mon, Wed, Thu, Fri · 18:30–23:30. Closed Tue, Sat, Sun." data-it=": lun, mer, gio, ven · 18:30–23:30. Chiuso mar, sab, dom.">: lun, mer, gio, ven · 18:30–23:30. Chiuso mar, sab, dom.</span>
+    </div>
+
+    <p class="contact-line" id="public-contact"></p>
+
+    <div id="menu-list"></div>
+
+    <section class="cart-box">
+      <div class="category" data-en="CART" data-it="CARRELLO">CART</div>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <span data-en="TOTAL" data-it="TOTALE">TOTAL</span>
+        <span id="cart-total">€0.00</span>
+      </div>
+      <p class="empty"><span data-en="Items" data-it="Articoli">Items</span>: <span id="cart-count">0</span></p>
+    </section>
+
+    <form class="form-box" id="checkout-form">
+      <div class="category" data-en="PICKUP DETAILS" data-it="DETTAGLI RITIRO">PICKUP DETAILS</div>
+      <label class="field">
+        <span data-en="Name" data-it="Nome">Name</span>
+        <input id="customer-name" name="name" autocomplete="name" required />
+      </label>
+      <label class="field">
+        <span data-en="Phone" data-it="Telefono">Phone</span>
+        <input id="customer-phone" name="phone" type="tel" autocomplete="tel" required />
+      </label>
+      <label class="field">
+        <span data-en="Pickup time" data-it="Orario di ritiro">Pickup time</span>
+        <select id="pickup-at" required></select>
+      </label>
+      <label class="check-row" id="age-wrap" hidden>
+        <span data-en="I confirm I am 18+ (required for beer)" data-it="Confermo di avere almeno 18 anni (obbligatorio per la birra)">I confirm I am 18+ (required for beer)</span>
+        <input id="age-confirm" type="checkbox" />
+      </label>
+      <p class="error" id="checkout-error" hidden></p>
+      <button class="primary" id="pay-btn" type="submit" disabled>CHECKOUT IN PROGRESS</button>
+    </form>
+  </div>
+
+  <div class="modal" id="customizer" hidden>
+    <div class="modal-card">
+      <h2 class="item-name" id="modal-title"></h2>
+      <div id="modal-mods"></div>
+      <label class="field">
+        <span data-en="Quantity" data-it="Quantità">Quantity</span>
+        <input id="modal-qty" type="number" min="1" max="10" value="1" />
+      </label>
+      <label class="field">
+        <span data-en="Note (optional)" data-it="Nota (opzionale)">Note (optional)</span>
+        <input id="modal-note" maxlength="140" />
+      </label>
+      <div class="modal-actions">
+        <button type="button" id="modal-cancel" data-en="CANCEL" data-it="ANNULLA">CANCEL</button>
+        <button type="button" class="confirm" id="modal-add" data-en="ADD" data-it="AGGIUNGI">ADD</button>
+      </div>
+    </div>
+  </div>
+
+  <footer><span>⚡</span> SMASHUP · SMASH BURGERS</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/pickup.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/order.js"></script>
+</body>
+</html>
