@@ -260,6 +260,19 @@
       transform: translateY(-1px);
     }
 
+
+    .order-card-badge {
+      display: inline-block;
+      margin-bottom: 0.55rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #0d0d0d;
+      background: #e8a020;
+      padding: 0.28rem 0.55rem;
+      text-transform: uppercase;
+    }
+
     .order-card-kicker {
       font-family: 'Oswald', sans-serif;
       font-size: 11px;
@@ -697,6 +710,11 @@
   <section class="order-section" aria-label="Online orders">
     <a class="order-card" href="order.html">
       <div
+        class="order-card-badge"
+        data-en="IN PROGRESS"
+        data-it="IN ARRIVO"
+      >IN PROGRESS</div>
+      <div
         class="order-card-kicker"
         data-en="Pickup orders"
         data-it="Ordini asporto"
@@ -708,9 +726,9 @@
       >ORDER ONLINE</div>
       <p
         class="order-card-text"
-        data-en="Browse the classic menu below, then open the orders page to choose items and pick a pickup time."
-        data-it="Sfoglia il menu classico qui sotto, poi apri la pagina ordini per scegliere cosa prendere e l'orario di ritiro."
-      >Browse the classic menu below, then open the orders page to choose items and pick a pickup time.</p>
+        data-en="You can preview the menu and cart on the orders page, but payment is not available yet."
+        data-it="Puoi vedere menu e carrello nella pagina ordini, ma il pagamento non è ancora disponibile."
+      >You can preview the menu and cart on the orders page, but payment is not available yet.</p>
       <p
         class="order-card-meta"
         data-en="Available Mon, Wed, Thu, Fri · 18:30–23:30. Closed Tue, Sat, Sun."
@@ -718,9 +736,9 @@
       >Available Mon, Wed, Thu, Fri · 18:30–23:30. Closed Tue, Sat, Sun.</p>
       <span
         class="order-card-cta"
-        data-en="GO TO ORDERS →"
-        data-it="VAI AGLI ORDINI →"
-      >GO TO ORDERS →</span>
+        data-en="PREVIEW ORDERS →"
+        data-it="ANTEPRIMA ORDINI →"
+      >PREVIEW ORDERS →</span>
     </a>
   </section>
 
