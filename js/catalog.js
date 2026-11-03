@@ -5,14 +5,14 @@ window.SMASHUP_FALLBACK_CATALOG = {
     slot_minutes: 15,
     ordering_enabled: false,
     // 0=Dom 1=Lun 2=Mar 3=Mer 4=Gio 5=Ven 6=Sab
-    // Ordini online: lun/mer/gio/ven · 18:30–23:30 (ultimo ritiro 23:30)
+    // Ordini online: lun/mer/gio/ven · 18:30–23:00 (ultimo ritiro 23:00)
     weekday_hours: {
       "0": [],
-      "1": [{ open: "18:30", close: "23:30" }],
+      "1": [{ open: "18:30", close: "23:00" }],
       "2": [],
-      "3": [{ open: "18:30", close: "23:30" }],
-      "4": [{ open: "18:30", close: "23:30" }],
-      "5": [{ open: "18:30", close: "23:30" }],
+      "3": [{ open: "18:30", close: "23:00" }],
+      "4": [{ open: "18:30", close: "23:00" }],
+      "5": [{ open: "18:30", close: "23:00" }],
       "6": []
     }
   },

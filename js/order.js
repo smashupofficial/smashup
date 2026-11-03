@@ -201,8 +201,8 @@
       var opt = document.createElement("option");
       opt.value = "";
       opt.textContent = SmashUpLang.t(
-        "No slots now — online orders: Mon, Wed, Thu, Fri 18:30–23:30",
-        "Nessuno slot ora — ordini online: lun, mer, gio, ven 18:30–23:30"
+        "No slots now — online orders: Mon, Wed, Thu, Fri 18:30–23:00",
+        "Nessuno slot ora — ordini online: lun, mer, gio, ven 18:30–23:00"
       );
       select.appendChild(opt);
     }

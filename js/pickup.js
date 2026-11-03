@@ -72,7 +72,7 @@
         var start = toMinutes(windowHours.open);
         var end = toMinutes(windowHours.close);
         var minute;
-        // close inclusivo: con close "23:30" l'ultimo slot è 23:30
+        // close inclusivo: con close "23:00" l'ultimo slot è 23:00
         for (minute = start; minute <= end; minute += slotMinutes) {
           var asDate = slotDate(ymd, minute, timeZone);
           if (!isNaN(asDate.getTime()) && asDate >= minTime) {
