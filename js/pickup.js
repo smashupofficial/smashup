@@ -19,12 +19,26 @@
   }
 
   function weekdayIndex(date, timeZone) {
-    var weekday = new Intl.DateTimeFormat("en-US", { timeZone: timeZone, weekday: "short" }).format(date);
+    var weekday = new Intl.DateTimeFormat("en-US", {
+      timeZone: timeZone,
+      weekday: "short"
+    }).format(date);
     return { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[weekday];
   }
 
+  // "GMT+1" / "GMT+01:00" → "+01:00" (senza questo Date diventa Invalid)
+  function normalizeOffset(raw) {
+    var s = String(raw || "+01:00")
+      .replace(/^GMT/i, "")
+      .replace(/^UTC/i, "");
+    if (s === "Z" || s === "" || s === "+0" || s === "-0") return "+00:00";
+    var match = s.match(/^([+-])(\d{1,2})(?::?(\d{2}))?$/);
+    if (!match) return "+01:00";
+    return match[1] + pad(parseInt(match[2], 10)) + ":" + (match[3] || "00");
+  }
+
   function slotDate(ymd, minute, timeZone) {
-    var probe = new Date(ymd + "T12:00:00+01:00");
+    var probe = new Date(ymd + "T12:00:00Z");
     var desired =
       ymd + "T" + pad(Math.floor(minute / 60)) + ":" + pad(minute % 60) + ":00";
     var offsetFmt = new Intl.DateTimeFormat("en-US", {
@@ -32,10 +46,10 @@
       timeZoneName: "shortOffset",
       hour: "2-digit"
     });
-    var tzName = offsetFmt.formatToParts(probe).find(function (p) { return p.type === "timeZoneName"; });
-    var offset = (tzName && tzName.value ? tzName.value.replace("GMT", "").replace("UTC", "") : "+01:00") || "+01:00";
-    if (/^[+-]\d{2}$/.test(offset)) offset += ":00";
-    if (offset === "+0" || offset === "GMT") offset = "+00:00";
+    var tzName = offsetFmt
+      .formatToParts(probe)
+      .find(function (p) { return p.type === "timeZoneName"; });
+    var offset = normalizeOffset(tzName && tzName.value);
     return new Date(desired + offset);
   }
 
@@ -61,7 +75,7 @@
         // close inclusivo: con close "23:30" l'ultimo slot è 23:30
         for (minute = start; minute <= end; minute += slotMinutes) {
           var asDate = slotDate(ymd, minute, timeZone);
-          if (asDate >= minTime) {
+          if (!isNaN(asDate.getTime()) && asDate >= minTime) {
             slots.push({
               iso: asDate.toISOString(),
               label: ymd + " " + pad(Math.floor(minute / 60)) + ":" + pad(minute % 60)

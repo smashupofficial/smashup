@@ -166,10 +166,30 @@
     renderPayState();
   }
 
+  function settingsForSlots() {
+    var base = catalog.settings || {};
+    // TEMP test bypass: apre tutti i giorni 12:00–23:30 finché non chiudiamo i test
+    if (window.SMASHUP_CONFIG && window.SMASHUP_CONFIG.testBypassHours) {
+      return Object.assign({}, base, {
+        weekday_hours: {
+          "0": [{ open: "12:00", close: "23:30" }],
+          "1": [{ open: "12:00", close: "23:30" }],
+          "2": [{ open: "12:00", close: "23:30" }],
+          "3": [{ open: "12:00", close: "23:30" }],
+          "4": [{ open: "12:00", close: "23:30" }],
+          "5": [{ open: "12:00", close: "23:30" }],
+          "6": [{ open: "12:00", close: "23:30" }]
+        },
+        lead_minutes: 5
+      });
+    }
+    return base;
+  }
+
   function renderSlots() {
     var select = document.getElementById("pickup-at");
     // 7 giorni: con mar/sab/dom chiusi restano comunque slot lun/mer/gio/ven
-    var slots = SmashUpPickup.buildSlots(catalog.settings, 7);
+    var slots = SmashUpPickup.buildSlots(settingsForSlots(), 7);
     select.innerHTML = '<option value="">' + SmashUpLang.t("Select pickup time", "Scegli orario di ritiro") + "</option>";
     slots.forEach(function (slot) {
       var opt = document.createElement("option");

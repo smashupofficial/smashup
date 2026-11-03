@@ -3,12 +3,13 @@ window.SMASHUP_CONFIG = {
   supabaseUrl: "https://rwctyntcrswtjkjqnbbi.supabase.co",
   supabaseAnonKey: "sb_publishable_cFBBO7ZsISSfH6OA5X6Fng_q5YOAN-L",
   siteUrl: "https://smashupburgers.it",
-  orderingEnabled: false,
+  orderingEnabled: true,
+  testBypassHours: false,
   publicPhone: "+39 379 354 4623",
   publicPhoneTel: "+393793544623",
   publicEmail: "info@smashupburgers.it",
   staffEmail: "info@smashupburgers.it",
-  stripePublishableKey: "pk_test_51UOxxzQrZzsglNUM726XZYI3eqHNCCGHrCMDns1NkyozoCG8yTH10q4xThZlrdpurZxV5L4mX8z2kKQLBiKmwfaI00HoUVqgbR"
+  stripePublishableKey: "pk_live_51UOxxzQrZzsglNUM3Vzd99opBxypEDMojlYLzjpKoc7Iq3jKhMCBJwG5h4HDFTmYXt5CzitzY90APF97bM5unk3N0016kvP2SM"
 };
 
 window.SmashUpContact = {
