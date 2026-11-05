@@ -95,6 +95,7 @@
         addBtn.textContent = SmashUpLang.t("ADD", "AGGIUNGI");
         addBtn.addEventListener("click", function () {
           // Sempre il modal: così anche chicken/vegan (e gli altri) possono avere nota + qty
+          // cache-bust note1
           openCustomizer(product);
         });
         root.appendChild(row);
