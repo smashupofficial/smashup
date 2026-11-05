@@ -94,8 +94,8 @@
         var addBtn = row.querySelector(".add-btn");
         addBtn.textContent = SmashUpLang.t("ADD", "AGGIUNGI");
         addBtn.addEventListener("click", function () {
-          if (product.customizable) openCustomizer(product);
-          else SmashUpCart.add({ productId: product.id, qty: 1, modifierIds: [] });
+          // Sempre il modal: così anche chicken/vegan (e gli altri) possono avere nota + qty
+          openCustomizer(product);
         });
         root.appendChild(row);
       });
