@@ -209,13 +209,25 @@
     }
   }
 
+  function closedDayMessage() {
+    return SmashUpLang.t(
+      "Tuesday, Saturday and Sunday: online payment is not available. Pickup days are Mon, Wed, Thu, Fri · 18:30–23:00.",
+      "Martedì, sabato e domenica non è possibile pagare online. I giorni di ritiro sono lun, mer, gio, ven · 18:30–23:00."
+    );
+  }
+
   function renderPayState() {
     var pay = document.getElementById("pay-btn");
-    var enabled = orderingOn() && SmashUpCart.count() > 0;
+    var closedToday = SmashUpPickup.isClosedOrderingDay(new Date(), "Europe/Rome");
+    var enabled = orderingOn() && SmashUpCart.count() > 0 && !closedToday;
     pay.disabled = !enabled;
-    pay.textContent = orderingOn()
-      ? SmashUpLang.t("PAY WITH STRIPE", "PAGA CON STRIPE")
-      : SmashUpLang.t("CHECKOUT IN PROGRESS", "PAGAMENTO IN ARRIVO");
+    if (!orderingOn()) {
+      pay.textContent = SmashUpLang.t("CHECKOUT IN PROGRESS", "PAGAMENTO IN ARRIVO");
+    } else if (closedToday) {
+      pay.textContent = SmashUpLang.t("CLOSED TODAY", "CHIUSO OGGI");
+    } else {
+      pay.textContent = SmashUpLang.t("PAY WITH STRIPE", "PAGA CON STRIPE");
+    }
   }
 
   async function checkout(event) {
@@ -223,6 +235,12 @@
     var errorEl = document.getElementById("checkout-error");
     errorEl.hidden = true;
     if (!orderingOn()) return;
+
+    if (SmashUpPickup.isClosedOrderingDay(new Date(), "Europe/Rome")) {
+      errorEl.textContent = closedDayMessage();
+      errorEl.hidden = false;
+      return;
+    }
 
     var name = document.getElementById("customer-name").value.trim();
     var phone = document.getElementById("customer-phone").value.trim();

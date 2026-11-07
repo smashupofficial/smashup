@@ -88,5 +88,15 @@
     return slots;
   }
 
-  global.SmashUpPickup = { buildSlots: buildSlots };
+  /** Martedì (2), sabato (6), domenica (0) — oggi in Europe/Rome */
+  function isClosedOrderingDay(date, timeZone) {
+    var day = weekdayIndex(date || new Date(), timeZone || "Europe/Rome");
+    return day === 0 || day === 2 || day === 6;
+  }
+
+  global.SmashUpPickup = {
+    buildSlots: buildSlots,
+    weekdayIndex: weekdayIndex,
+    isClosedOrderingDay: isClosedOrderingDay
+  };
 })(window);
