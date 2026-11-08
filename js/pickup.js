@@ -88,10 +88,11 @@
     return slots;
   }
 
-  /** Martedì (2), sabato (6), domenica (0) — oggi in Europe/Rome */
+  /** Martedì (2), sabato (6), domenica (0) — oggi in Europe/Rome.
+   *  TEMP: domenica sbloccata (solo mar/sab chiusi). Ripristinare day === 0 quando serve. */
   function isClosedOrderingDay(date, timeZone) {
     var day = weekdayIndex(date || new Date(), timeZone || "Europe/Rome");
-    return day === 0 || day === 2 || day === 6;
+    return day === 2 || day === 6;
   }
 
   global.SmashUpPickup = {

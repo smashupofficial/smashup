@@ -7,7 +7,8 @@ window.SMASHUP_FALLBACK_CATALOG = {
     // 0=Dom 1=Lun 2=Mar 3=Mer 4=Gio 5=Ven 6=Sab
     // Ordini online: lun/mer/gio/ven · 18:30–23:00 (ultimo ritiro 23:00)
     weekday_hours: {
-      "0": [],
+      // TEMP domenica aperta — ripristinare [] dopo oggi
+      "0": [{ open: "18:30", close: "23:00" }],
       "1": [{ open: "18:30", close: "23:00" }],
       "2": [],
       "3": [{ open: "18:30", close: "23:00" }],

@@ -211,8 +211,8 @@
 
   function closedDayMessage() {
     return SmashUpLang.t(
-      "Tuesday, Saturday and Sunday: online payment is not available. Pickup days are Mon, Wed, Thu, Fri · 18:30–23:00.",
-      "Martedì, sabato e domenica non è possibile pagare online. I giorni di ritiro sono lun, mer, gio, ven · 18:30–23:00."
+      "Tuesday and Saturday: online payment is not available. Pickup days are Sun, Mon, Wed, Thu, Fri · 18:30–23:00.",
+      "Martedì e sabato non è possibile pagare online. I giorni di ritiro sono dom, lun, mer, gio, ven · 18:30–23:00."
     );
   }
 
