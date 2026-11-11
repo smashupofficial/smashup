@@ -184,7 +184,10 @@
         lead_minutes: 5
       });
     }
-    return base;
+    // TEMP solo mercoledì 11/11/2026: ritiro dalle 12:00
+    var hours = Object.assign({}, base.weekday_hours || {});
+    hours["3"] = [{ open: "12:00", close: "23:00" }];
+    return Object.assign({}, base, { weekday_hours: hours });
   }
 
   function renderSlots() {
