@@ -11,7 +11,8 @@ window.SMASHUP_FALLBACK_CATALOG = {
       "0": [{ open: "18:30", close: "23:00" }],
       "1": [{ open: "18:30", close: "23:00" }],
       "2": [],
-      "3": [{ open: "18:30", close: "23:00" }],
+      // TEMP solo oggi (mer 11/11): ritiro dalle 12:00 — ripristinare 18:30 dopo
+      "3": [{ open: "12:00", close: "23:00" }],
       "4": [{ open: "18:30", close: "23:00" }],
       "5": [{ open: "18:30", close: "23:00" }],
       "6": []
